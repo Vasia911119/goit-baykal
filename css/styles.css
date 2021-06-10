@@ -233,10 +233,15 @@ svg {
   margin-right: 16px;
   border: 2px solid var(--helper-text-color);
   border-radius: 2px;
+
+  fill: transparent;
+  stroke: transparent;
 }
 .checkbox:checked + .form-checkbox-icon {
   border: 1px solid transparent;
   background-color: var(--interactive-elements-color);
+  fill: var(--dark-theme-title-color);
+  stroke: var(--dark-theme-title-color);
 }
 .send-button {
   display: inline-flex;
