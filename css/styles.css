@@ -121,7 +121,7 @@ svg {
 .button-right {
   margin-left: 16px;
 }
-.button-link .button:active {
+.button:active {
   border-color: var(--active-link-text-color);
   stroke: var(--active-link-text-color);
 }
