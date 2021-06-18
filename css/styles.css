@@ -162,13 +162,13 @@ svg {
   position: relative;
   display: grid;
   grid-template-areas:
-    "label-1 label-2 label-3"
-    "label-4 label-5 label-6"
-    "label-7 label-9 label-9"
-    "label-8 label-9 label-9";
+    "label-1 label-1 label-2 label-2 label-3 label-3"
+    "label-4 label-4 label-5 label-5 label-6 label-6"
+    "label-7 label-9 label-9 label-9 label-9 label-9"
+    "label-8 label-9 label-9 label-9 label-9 label-9";
 
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 2fr 1fr 2fr 1fr 3fr;
   row-gap: 24px;
   column-gap: 30px;
 
