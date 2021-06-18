@@ -35,8 +35,8 @@ body {
   color: inherit;
 }
 .container {
-  width: 1200px;
-  padding: 0 40px;
+  width: 1150px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 h1,
@@ -67,26 +67,26 @@ svg {
 }
 /* -- ‡ GLOBAL -- */
 /* -- PHOTO GALLERY -- */
-.photo-gallery {
+.gallery {
   padding: 44px 0 80px 0;
 
   background-color: var(--photo-gallery-background-color);
 }
-.photo-gallery-header {
+.gallery__header {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
 
   margin-bottom: 45px;
 }
-.photo-gallery-header .title {
+.gallery__title {
   color: var(--light-theme-title-color);
 
   font-family: PT Serif;
   font-size: 30px;
   line-height: 1.3;
 }
-.photo-gallery-link {
+.gallery__link {
   margin-left: auto;
 
   color: var(--link-text-color);
@@ -97,13 +97,14 @@ svg {
   line-height: 1.1875;
   text-decoration-line: underline;
 }
-.photo-gallery-link:active {
+.gallery__link:hover,
+.gallery__link:focus {
   color: var(--active-link-text-color);
 }
-.buttons {
+.gallery__buttons {
   margin-left: 55px;
 }
-.button {
+.gallery__button {
   padding: 15px 16px 12px 17px;
 
   border: 1px solid var(--interactive-elements-color);
@@ -115,23 +116,32 @@ svg {
 
   cursor: pointer;
 }
-.left-icon {
+.gallery__left-icon {
   transform: scale(-1, 1);
 }
-.button-right {
+.gallery__button-right {
   margin-left: 16px;
 }
-.button:active {
+.gallery__button:hover,
+.gallery__button:focus {
   border-color: var(--active-link-text-color);
   stroke: var(--active-link-text-color);
 }
-.photo {
+/* .gallery__button:not(:hover) {
+  border-color: var(--interactive-elements-color);
+  stroke: var(--interactive-elements-color);
+} */
+/* .gallery__button:active {
+  border-color: var(--first-brand-color);
+  stroke: var(--first-brand-color);
+} */
+.gallery__photo {
   flex-wrap: wrap;
 
   margin-top: -32px;
   margin-left: -32px;
 }
-.photo .item {
+.gallery__photo-item {
   flex-basis: calc(100% / 3 - 32px);
 
   margin-top: 32px;
@@ -146,16 +156,16 @@ svg {
 
   background-color: var(--form-background-color);
 }
-.request {
+.form__request {
   padding-left: 144px;
   padding-right: 144px;
 }
-.group-field {
+.form__group-field {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.form-title {
+.form__title {
   margin-bottom: 51px;
 
   color: var(--light-theme-title-color);
@@ -165,33 +175,33 @@ svg {
   line-height: 1.3;
   text-align: center;
 }
-.form-label {
+.form__label {
   margin-bottom: 24px;
   flex-basis: calc((100% - 64px) / 3);
 }
-.form-input {
+.form__input {
   width: 100%;
   margin: 0;
   padding: 11px 12px;
   border: 1px solid var(--form-border-color);
 }
-.group-field ::placeholder,
-.form-label ::placeholder {
+.form__group-field ::placeholder,
+.form__label ::placeholder {
   font-size: 16px;
   line-height: 1.3;
   color: var(--helper-text-color);
 }
-.form-dates {
+.form__dates {
   display: flex;
   flex-direction: column;
   max-width: 18%;
   margin-bottom: 6px;
 }
-.form-dates + .form-label {
+.form__dates + .form__label {
   min-width: 78%;
   margin-bottom: 30px;
 }
-.textarea {
+.form__textarea {
   width: 100%;
   height: 100%;
 
@@ -200,12 +210,14 @@ svg {
   resize: none;
   border: 1px solid var(--form-border-color);
 }
-.form-input:focus,
-.textarea:focus {
+.form__input:hover,
+.form__textarea:hover,
+.form__input:focus,
+.form__textarea:focus {
   outline: none;
   border-color: var(--active-link-text-color);
 }
-.checkbox {
+.form__checkbox {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -218,7 +230,7 @@ svg {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.form-checkbox {
+.form__checkbox-field {
   display: flex;
   align-items: center;
 
@@ -227,7 +239,10 @@ svg {
   text-decoration-line: underline;
   color: var(--helper-text-color);
 }
-.form-checkbox-icon {
+.form__checkbox-field:hover .form__checkbox-icon {
+  border: 1px solid var(--active-link-text-color);
+}
+.form__checkbox-icon {
   width: 26px;
   height: 26px;
   margin-right: 16px;
@@ -237,13 +252,16 @@ svg {
   fill: transparent;
   stroke: transparent;
 }
-.checkbox:checked + .form-checkbox-icon {
-  border: 1px solid transparent;
+.form__checkbox:focus + .form__checkbox-icon {
+  border: 1px solid var(--active-link-text-color);
+}
+.form__checkbox:checked + .form__checkbox-icon {
+  /* border: 1px solid transparent; */
   background-color: var(--interactive-elements-color);
   fill: var(--dark-theme-title-color);
   stroke: var(--dark-theme-title-color);
 }
-.send-button {
+.form__send-button {
   display: inline-flex;
   align-items: center;
   padding: 20px 72px;
@@ -252,6 +270,7 @@ svg {
   color: var(--dark-theme-title-color);
   border-radius: 30px;
   border: none;
+  /* border: 1px solid var(--interactive-elements-color); */
 
   font-size: 18px;
   line-height: 1.167;
@@ -259,5 +278,10 @@ svg {
   text-align: center;
 
   cursor: pointer;
+}
+.form__send-button:hover,
+.form__send-button:focus {
+  outline: none;
+  border: 1px solid var(--active-link-text-color);
 }
 /* -- ‡ FORM -- */
