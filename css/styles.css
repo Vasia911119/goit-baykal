@@ -91,9 +91,6 @@ svg {
 
   color: var(--link-text-color);
 
-  font-family: Roboto;
-  font-weight: normal;
-  font-size: 16px;
   line-height: 1.1875;
   text-decoration-line: underline;
 
@@ -132,25 +129,21 @@ svg {
   border-color: var(--active-link-text-color);
   stroke: var(--active-link-text-color);
 }
-/* .gallery__button:not(:hover) {
-  border-color: var(--interactive-elements-color);
-  stroke: var(--interactive-elements-color);
-} */
-/* .gallery__button:active {
-  border-color: var(--first-brand-color);
-  stroke: var(--first-brand-color);
-} */
 .gallery__photo {
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+
+  /* flex-wrap: wrap;
 
   margin-top: -32px;
-  margin-left: -32px;
+  margin-left: -32px; */
 }
 .gallery__photo-item {
-  flex-basis: calc(100% / 3 - 32px);
+  /* flex-basis: calc(100% / 3 - 32px);
 
   margin-top: 32px;
-  margin-left: 32px;
+  margin-left: 32px; */
   border-radius: 6px;
   overflow: hidden;
 }
